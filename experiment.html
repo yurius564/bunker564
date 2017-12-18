@@ -4,9 +4,12 @@
   </head>
   <body>
     <script> 
-      function res() {
-        form.msg.value = `setblock ~ ~1 ~ sign{Text1:"{\\"text\\":\\"[shop]\\",\\"color\\":\\"dark_red\\",\\"bold\\":\\"true\\",\\"clickEvent\\":{\\"action\\":\\"run_command\\",\\"value\\":\\"/execute store result score @p CountItems run clear @p ${form.id1.value} 0\\"}}",Text2:"{\\"text\\":\\"${form.qnt1.value} ${form.id1.value}\\",\\"color\\":\\"gold\\",\\"clickEvent\\":{\\"action\\":\\"run_command\\",\\"value\\":\\"/clear @p[scores={CountItems=${form.qnt1.value}}] ${form.id1.value} ${form.qnt1.value}\\"}}",Text3:"{\\"text\\":\\"por\\",\\"color\\":\\"green\\",\\"bold\\":\\"true\\",\\"clickEvent\\":{\\"action\\":\\"run_command\\",\\"value\\":\\"/give @p[scores={CountItems=${form.qnt1.value}..}] ${form.id2.value} ${form.qnt2.value}}\\"}",Text4:"{\\"text\\":\\"${form.qnt2.value} ${form.id2.value}\\",\\"color\\":\\"gold\\",\\"clickEvent\\":{\\"action\\":\\"run_command\\",\\"value\\":\\"/scoreboard players set @p Count 0\\"}}"} replace`;
-      }
+       
+	function res() 
+	{
+	form.msg.value = 
+"setblock ~ ~1 ~ sign{Text1:\"{\\\"text\\\":\\\"[shop]\\\",\\\"color\\\":\\\"dark_red\\\",\\\"bold\\\":\\\"true\\\",\\\"clickEvent\\\":{\\\"action\\\":\\\"run_command\\\",\\\"value\\\":\\\"/execute store result score @p CountItems run clear @p " + form.id1.value + " 0\\\"}}\",Text2:\"{\\\"text\\\":\\\"" + form.qnt1.value + " " + form.id1.value + "\\\",\\\"color\\\":\\\"gold\\\",\\\"clickEvent\\\":{\\\"action\\\":\\\"run_command\\\",\\\"value\\\":\\\"/clear @p[scores={CountItems=" + form.qnt1.value + "..}] " + form.id1.value + " " + form.qnt1.value + "\\\"}}\",Text3:\"{\\\"text\\\":\\\"por\\\",\\\"color\\\":\\\"green\\\",\\\"bold\\\":\\\"true\\\",\\\"clickEvent\\\":{\\\"action\\\":\\\"run_command\\\",\\\"value\\\":\\\"/give @p[scores={CountItems=" + form.qnt1.value + "..}] " + form.id2.value + " " + form.qnt2.value + "\\\"}}\",Text4:\"{\\\"text\\\":\\\"" + form.qnt2.value + " " + form.id2.value + "\\\",\\\"color\\\":\\\"gold\\\",\\\"clickEvent\\\":{\\\"action\\\":\\\"run_command\\\",\\\"value\\\":\\\"/scoreboard players set @p Count 0\\\"}}\"} replace"
+}
     </script>
     <form name="form">
       <p>
