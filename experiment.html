@@ -1,0 +1,21 @@
+<html>
+  <body>
+    <script> 
+      function res() {
+        form.msg.value = "setblock ~ ~1 ~ sign{Text1:\"{\\\"text\\\":\"[shop]\",\"color\":\\\"dark_red\\\",\\\"bold\\\":\"true\",\"clickEvent\":{\\\"action\\\":\"run_command\",\"value\":\"/scoreboard objectives add CountItems dummy\"}}",Text2:\"{\\\"text\\\":\"" + form.qnt1.value + " " + form.id1.value + "\",\"color\":\\\"gold\\\",\\\"clickEvent\\\":{\"action\":\\\"run_command\\\",\\\"value\\\":\"/execute store result score @p CountItems run clear @p " + form.id1.value + " 0\"}}",Text3:\"{\\\"text\\\":\"por\",\"color\":\\\"green\\\",\\\"bold\\\":\"true\",\"clickEvent\":{\\\"action\\\":\"run_command\",\"value\":\"/clear @p[scores={CountItems=" + form.qnt1.value + "..}] " + form.id1.value + " " + form.qnt1.value + "\"}}",Text4:\"{\\\"text\\\":\"" + form.qnt2.value + " " + form.id2.value + "\",\"color\":\\\"gold\\\",\\\"clickEvent\\\":{\"action\":\\\"run_command\\\",\\\"value\\\":\"/give @p[scores={CountItems=" + form.qnt1.value + "..}] " + form.id2.value + " " + form.qnt2.value + "\"}}"} replace"
+      }
+    </script>
+    <form name="form">
+      <p style="color:white">
+        <b>
+          ID do item a ser vendido <input name="id1"> 
+          Quantidade <input name="qnt1" style="margin:10px; width:50px;"><br>
+          ID do item a ser comprado <input name="id2">  
+          Quantidade <input name="qnt2" style="margin:10px; width:50px;"><br>
+        </b>
+      </p>
+      <input type="button" onclick="res()" value="Ver Resultado"><br><br>
+      <textarea style="resize:none" id="msg" cols="80" rows="15" readonly></textarea>
+    </form>
+  </body>
+</html>
