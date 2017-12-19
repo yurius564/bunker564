@@ -1,41 +1,62 @@
 <html>
+  <script>
+  function TrocPlaca() {
+    if (id1.value != "" && id2.value != "" && qnt1.value != "" && qnt2.value != "") {
+      res1.value = "setblock ~ ~1 ~ sign{Text1:\"{\\\"text\\\":\\\"[shop]\\\",\\\"color\\\":\\\"dark_red\\\",\\\"bold\\\":\\\"true\\\",\\\"clickEvent\\\":{\\\"action\\\":\\\"run_command\\\",\\\"value\\\":\\\"/scoreboard objectives add CountItems dummy\\\"}}\",Text2:\"{\\\"text\\\":\\\"" + qnt1.value + " " + id1.value + "\\\",\\\"color\\\":\\\"gold\\\",\\\"clickEvent\\\":{\\\"action\\\":\\\"run_command\\\",\\\"value\\\":\\\"/execute store result score @p CountItems run clear @p " + id1.value + " 0\\\"}}\",Text3:\"{\\\"text\\\":\\\"por\\\",\\\"color\\\":\\\"green\\\",\\\"bold\\\":\\\"true\\\",\\\"clickEvent\\\":{\\\"action\\\":\\\"run_command\\\",\\\"value\\\":\\\"/clear @p[scores={CountItems=" + qnt1.value + "..}] " + id1.value + " " + qnt1.value + "\\\"}}\",Text4:\"{\\\"text\\\":\\\"" + qnt2.value + " " + id2.value + "\\\",\\\"color\\\":\\\"gold\\\",\\\"clickEvent\\\":{\\\"action\\\":\\\"run_command\\\",\\\"value\\\":\\\"/give @p[scores={CountItems=" + qnt1.value + "..}] " + id2.value + " " + qnt2.value + "\\\"}}\"} replace";
+    }
+  }
+  </script>
   <head>
     <link rel="icon" href="https://imgur.com/DdL6Y8m.png" />
     
-    <title>bunker564 - pagina inicial</title>
+    <title>bunker564</title>
     <style>
+      @font-face {
+         font-family: eightbits;
+         src: url(8bitOperatorPlusSC-Regular.ttf);
+      }
+      @font-face {
+         font-family: eightbits;
+         src: url(8bitOperatorPlusSC-Bold.ttf);
+         font-weight: bold;
+      }
+
       body {
           background-color: rgb(8, 8, 8);
       }
       div {
-      background-color: rgb(13, 13, 13);
+      	  background-color: rgb(13, 13, 13);
       	  border-style: solid dashed solid dashed;
+	  font-family: eightbits;
       }
       h1 {
           color: rgb(255, 255, 0);
           text-align: center;
           font-size: 50px;
+	  font-family: eightbits;
+	  text-shadow: 3px 3px 2px black;
       }
       h2 {
-          font-family: verdana;
+          font-family: eightbits;
           text-align: center;
           font-size: 30px;
+	  text-shadow: 2px 2px 2px black;
       }
       p {
-          font-family: verdana;
+          font-family: eightbits;
           text-align: center;
           font-size: 20px;
+	  color:rgb(0, 102, 204);
+	  text-shadow: 2px 2px 2px black;
       }
-
-      .base {
-          color: rgb(0, 138, 230);
-      }
+	    
       ul {
           list-style-type: none;
           margin: 0;
           padding: 0;
           overflow: hidden;
           background-color:rgb(0, 64, 128);
+	  font-family: eightbits;
       }
 
       li {
@@ -46,7 +67,8 @@
           display: block;
           color: white;
           text-align: center;
-          padding: 14px 16px;
+          padding: 8px 15px;
+          font-size:18px;
           margin-left:15px;
           text-decoration: none;
       }
@@ -62,12 +84,12 @@
   </head>
     <body>
       <ul>
+ 	  <li><a href="index.html">pagina inicial</a></li>
  	  <li><a href="geradores.html">geradores</a></li>
- 	  <li><a href="experiment.html">experiment</a></li>
 	  </ul>
       <br> 
       <div>
-        
+	      
       </div>
     </body>
 </html>
