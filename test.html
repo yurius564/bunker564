@@ -1,40 +1,46 @@
 <!DOCTYPE html>
 <html>
-<head>
-<style>
-body {
-    background-color: rgb(15, 15, 15);
-}
+  <head>
+    <style>
+      body {
+          background-color: rgb(15, 15, 15);
+      }
 
-h1 {
-    color: rgb(255, 255, 0);
-    text-align: center;
-    font-size: 40px;
-    background-color: rgb(0, 0, 0);
-    background-image: linear-gradient(rgb(15,15,15),rgb(10,10,10),rgb(15,15,15),rgb(15,15,15),rgb(15,15,15),rgb(15,15,15),rgb(10,10,10),rgb(15,15,15));
-}
-p {
-    font-family: verdana;
-    text-align: center;
-    font-size: 20px;
-}
+      h1 {
+          color: rgb(255, 255, 0);
+          text-align: center;
+          font-size: 40px;
+          background-color: rgb(0, 0, 0);
+          background-image: linear-gradient(rgb(15,15,15),rgb(15,15,15),rgb(15,15,15),rgb(15,15,15),rgb(15,15,15),rgb(15,15,15),rgb(10,10,10),rgb(9,9,9));
+      }
+      p {
+          font-family: verdana;
+          text-align: center;
+          font-size: 20px;
+      }
 
-.base {
-	color: rgb(0, 138, 230);
-}
-</style>
-</head>
-<body>
-
-<h1>Bunker564</h1>
-<p class="base" >Troca de items por placa(1.13)</p>
-<p style="color:rgb(153, 214, 255); margin-left:360px;text-align: left;">
-id do item a ser vendido
-<input id="id1"></input>
- Quantidade<input id="qnt1" style="margin:10px; width:50px;"></input><br>
-id do item a ser comprado
-<input id="id2"></input>
- Quantidade<input id="qnt2" style="margin:10px; width:50px"></input>
-</p>
-</body>
+      .base {
+          color: rgb(0, 138, 230);
+      }
+    </style>
+  </head>
+    <body>
+      <h1>Bunker564</h1>
+      <p class="base" >Troca de items por placa(1.13)</p>
+      <p style="color:rgb(153, 214, 255); margin-left:360px; text-align: left;">
+      id do item a ser vendido
+      <input id="id1"></input>
+       Quantidade<input id="qnt1" style="margin:10px; width:50px;"></input><br>
+      id do item a ser comprado
+      <input id="id2"></input>
+       Quantidade<input id="qnt2" style="margin:10px; width:50px"></input>
+      </p>
+      <button onclick="TrocPlaca()", style="margin-left:360px;">Ver Resultado</button><br><br>
+      <textarea style="resize:none; margin-left:360px;" id="res1" cols="80" rows="15" readonly></textarea>
+    </body>
+  <script>
+  function TrocPlaca() {
+  res1.value = "setblock ~ ~1 ~ sign{Text1:\"{\\\"text\\\":\\\"[shop]\\\",\\\"color\\\":\\\"dark_red\\\",\\\"bold\\\":\\\"true\\\",\\\"clickEvent\\\":{\\\"action\\\":\\\"run_command\\\",\\\"value\\\":\\\"/scoreboard objectives add CountItems dummy\\\"}}\",Text2:\"{\\\"text\\\":\\\"" + qnt1.value + " " + id1.value + "\\\",\\\"color\\\":\\\"gold\\\",\\\"clickEvent\\\":{\\\"action\\\":\\\"run_command\\\",\\\"value\\\":\\\"/execute store result score @p CountItems run clear @p " + id1.value + " 0\\\"}}\",Text3:\"{\\\"text\\\":\\\"por\\\",\\\"color\\\":\\\"green\\\",\\\"bold\\\":\\\"true\\\",\\\"clickEvent\\\":{\\\"action\\\":\\\"run_command\\\",\\\"value\\\":\\\"/clear @p[scores={CountItems=" + qnt1.value + "..}] " + id1.value + " " + qnt1.value + "\\\"}}\",Text4:\"{\\\"text\\\":\\\"" + qnt2.value + " " + id2.value + "\\\",\\\"color\\\":\\\"gold\\\",\\\"clickEvent\\\":{\\\"action\\\":\\\"run_command\\\",\\\"value\\\":\\\"/give @p[scores={CountItems=" + qnt1.value + "..}] " + id2.value + " " + qnt2.value + "\\\"}}\"} replace"
+  }
+  </script>
 </html>
