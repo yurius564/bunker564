@@ -6,18 +6,27 @@
   content="width=devide-width, initial-scale=1.0, maximun-scale=1.0, user-scalable=0" />
   
   <style>
-    button {
+    .bt1 {
       border-radius: 4px;
       background: red;
     }
-      button:active {
+      .bt1:active {
       background: blue;
+    }
     }
   </style>
 </head>
   <script>
+  	function change() {
+      if(text.value == "Y")
+      	text.value = "X";
+      if(text.value == "")
+      	text.value = "Y";
+    }
   </script>
   <body>
-    <button>change</button>
+    <button class="bt1" onclick="change()">change</button>
+    <br><br>
+    <textarea readonly id="text"></textarea>
   </body>
 </html>
